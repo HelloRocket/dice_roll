@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Guess the number on the die</title>
+      <style>
+        form {
+          width: 420px;
+        }
+
+        div {
+          margin-bottom: 20px;
+        }
+
+        label {
+          display: inline-block;
+          width: 240px;
+          text-align: right;
+          padding-right: 10px;
+        }
+
+        button, input {
+          float: right;
+        }
+      </style>
+    </head>
+    <body>
+      <p>{{roll}}</p>
+      <form method="post" action="{{ url_for('result') }}">
+        <div>
+          <label for="numb">What number is it?</label>
+          <input type="number" name="say" id="numb" >
+        </div>
+        <div>
+          <label for="roll"> </label>
+          <input type="hidden" name="roll" id="roll" value={{roll}}>
+        </div>
+        <div>
+          <button>Check my guess</button>
+        </div>
+      </form>
+    </body>
+  </html>
